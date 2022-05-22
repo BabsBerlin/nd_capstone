@@ -34,13 +34,11 @@ The tables are displayed in the following image:
 
 - `CapstoneProject.ipynb` contains all code data exploration and preparation for the etl and data_checks pipelines.
 - `etl.py` contains pipeline code to extract the data files, process them via Spark and pandas, and write them back to a data storage using the parquet format
-- `data_ckecks.py` contains pipeline code to run data quality checks after the etl pipeline has been executed.
 
 
 ### Project Steps and how to run the project 
 
 - execute `etl.py` to extract, process (transform), and load the data.
-- execute `data_checks.py` to make sure the etl process has been successfull.
 
 
 ### Data Dictionary
@@ -96,3 +94,8 @@ DIM_DEMOGRAPHICS
 - **foreign_born**: number of people born in a foreign country 
 
 
+### Different Scenarios
+
+1. **If the data was increased by 100x**: I would move the parquet storage to an S3 bucket in the cloud with scalable data storage.
+2. **If the data populates a dashboard that must be updated on a daily basis by 7am every day**: I would move the pipeline to Airflow, and set a schedule to have it run every morning to update the dashboard.
+3. **If the database needed to be accessed by 100+ people**: Like for point 1, moving the storage to an S3 bucket would be sufficient to enable high scale and frequent access.
