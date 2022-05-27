@@ -32,7 +32,8 @@ The tables are displayed in the following image:
 
 ### The Project Files
 
-- `CapstoneProject.ipynb` contains all code data exploration and preparation for the etl and data_checks pipelines.
+- `USimmigration_etl.ipynb` contains all code for data exploration and preparation for the etl and data_checks pipelines.
+- `USimmigration_analysis.ipynb` contains some sample queries for possible data analysis.
 - `etl.py` contains pipeline code to extract the data files, process them via Spark and pandas, and write them back to a data storage using the parquet format
 
 
@@ -84,7 +85,7 @@ DIM_VISACAT
 
 DIM_DEMOGRAPHICS
 - **city_id**: primary key
-- **city_name**: name of the city
+- **city**: name of the city
 - **state**: name of the state
 - **median_age**: the median age of the cities population
 - **average_houshold_income**: the cities average household income
